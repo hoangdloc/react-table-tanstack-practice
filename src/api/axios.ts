@@ -6,17 +6,17 @@ const axiosInstance = axios.create({
   baseURL: 'https://randomuser.me/api',
   responseType: 'json',
   params: {
-    results: 3,
-    nat: 'us,dk,fr,gb'
+    results: 100
   },
   transformResponse: [
     (data: string): Person[] => {
       const { results } = JSON.parse(data) as PersonResponse;
-      return results.map((result) => ({
+      return results.map(result => ({
         firstName: result.name.first,
         lastName: result.name.last,
         gender: result.gender,
         age: result.dob.age,
+        country: result.location.country,
         avatar: result.picture.large,
         phone: result.phone
       }));

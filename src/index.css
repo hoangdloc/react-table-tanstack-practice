@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-white text-base;
+  @apply text-base text-white;
   background: #fc00ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -15,4 +15,16 @@ body {
     #00dbde,
     #fc00ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+button {
+  @apply flex items-center justify-center text-xl transition-all rounded-lg bg-gray-50 bg-opacity-60 hover:text-yellow-500 hover:bg-opacity-100 active:scale-105 disabled:bg-opacity-30 disabled:opacity-60 disabled:hover:text-white disabled:active:scale-100 disabled:cursor-not-allowed;
+}
+
+input {
+  @apply px-3 py-1 font-normal text-white transition-all bg-white border border-white rounded focus:border-opacity-50 focus:bg-opacity-50 border-opacity-20 bg-opacity-20 outline-yellow-500 placeholder:font-normal placeholder:text-white placeholder:text-opacity-60;
+}
+
+select {
+  @apply font-normal text-white bg-transparent outline-none cursor-pointer;
 }
